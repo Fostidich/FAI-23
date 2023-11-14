@@ -38,7 +38,7 @@ Many properties of this thus arise.
 The end goal of AI is to design an agent program that reflects and implements the agent function.
 We can outline four basic kinds of agent programs:
 1. [simple reflex agents](#simple-reflex-agents),
-2. [model-based reflex agents](#Model-based%20reflex%20agents),
+2. [model-based reflex agents](#model-based-reflex-agents),
 3. [goal-based agents](#goal-based-agents),
 4. [utility-based agents](#utility-based-agents).
 ## Simple reflex agents
@@ -46,8 +46,28 @@ This is the simplest kind of agent. The actions are just selected on the basis o
 This simple connection between perception and behavior is called condition-action rule.
 Often, infinite loops of actions are unavoidable for this agent when operating in partially observable environments, unless randomization can come into play.
 ## Model-based reflex agents
-two
+Here, the agent does maintain some sort of history, in fact, it stores an internal state that depends on previous percepts. This history thereby reflects on some of the unobserved aspects of the current state.
+The stored information requires two kinds of knowledge, defined in two different models.
+In a transitional model, data is retrieved by analyzing how the world changes over time, focusing on the effects on the agent's actions and on the world evolution, independently.
+In a sensor model, data comes from how the state of the world is reflected on the agent's percept.
+Altogether, transitional and sensor model defines the model-based agent.
+Regardless of the representations used, if the current state is in a partially observable environment, the agent will try the "best guess".
 ## Goal-based agents
-three
+As well as the current state description, the agent will need some kind of a goal information, which is used to describe if the state is desirable.
+Finding the action sequences that achieves the goal is the focus of the AI subfields for planning and searching.
+Decision making here is very different from a condition-action system, since consideration of the future if fundamental.
+On the other side, a goal-based agent's behavior is more flexible since changing the goal does not imply changing the whole rule set.
 ## Utility-based agents
-four
+A performance measure for any given sequence of states can be used to assign scores, so to have a distinction between more and less desirable ways of getting to the goal.
+This task is defined by an utility function.
+After all, maximizing the utility choosing the right actions is rational.
+## Learning agents
+Learning allows the agent to operate in initially unknown environments and to become more competent than its initial knowledge alone might have allowed.
+A learning agent can be divided into four conceptual components:
+- **a learning element** is responsible for making improvements;
+- **a performance element** is responsible for selecting external actions, in particular it takes the percepts and decides the actions;
+- **a critic** is used to get feedback for the learning element, and thus how the performance elements should be tweaked to do better. This is necessary because the percepts themselves do not provide indication of success to the agent;
+- **a problem generator** is used to suggest actions leading to new and informative experiences, since explore a little and trying suboptimal paths will lead to much better decisions for the long run.
+
+The performance standard distinguishes part of the incoming percept as a reward or a penalty to provide direct feedback on the quality of the agent's behavior.
+Learning in intelligent agents can be summarized as a process of modification of each component with the ultimate goal of improving the overall performance.

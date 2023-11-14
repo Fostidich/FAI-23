@@ -38,7 +38,7 @@ Many properties of this thus arise.
 The end goal of AI is to design an agent program that reflects and implements the agent function.
 We can outline four basic kinds of agent programs:
 1. [simple reflex agents](#simple-reflex-agents),
-2. [model-based reflex agents](I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents#Model-based%20reflex%20agents),
+2. [model-based reflex agents](#Model-based%20reflex%20agents),
 3. [goal-based agents](#goal-based-agents),
 4. [utility-based agents](#utility-based-agents).
 ## Simple reflex agents

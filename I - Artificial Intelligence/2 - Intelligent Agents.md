@@ -12,9 +12,9 @@ Often the built agent does have an initial uncertainty, thus the true performanc
 Furthermore, if the geography of the environment is unknown, the agent needs to explore it.
 - - -
 Rationality has been defined to depend on four specific factors at any given time:
-- the performance measure of the success
-- the internal knowledge of the agent
-- the available actions to do
+- the performance measure of the success,
+- the internal knowledge of the agent,
+- the available actions to do,
 - the percept sequence of states to date.
 
 Therefore, we can approach a definition:
@@ -27,10 +27,27 @@ Another important concept shelters in the ability of an agent to act randomly, b
 # The nature of environments
 In designing an agent, the first step is always to specify the task environment as fully as possible.
 Many properties of this thus arise.
-- Fully vs partially observable: a task environment can be fully observable if sensors detects all relevant aspects for taking choices. A partial one may have noise o inaccuracy, or simply lack sensor data. If no sensor is available, environment is then unobservable; note that goals may be achievable even in this case scenario.
-- Single vs multiagent: just one agent can be implemented, or many of them can appear in a given scenario. These can be classified by their relationship, in fact, a multiagent environment can be competitive or cooperative. Communication can emerge between agents, or randomized behavior can appear as it is rational to avoid predictability.
-- Deterministic vs nondeterministic: if the following state is completely dependent on the current action, we say that the environment is deterministic, otherwise it is not. Nondeterministic and stochastic models found their difference whether probabilities are explicitly dealt with: stochastic environments provides precise probability values for its future possible branches of states, nondeterministic do not.
-- Episodic vs sequential: in sequential environment current decisions can affect all future decisions, otherwise it is episodic.
-- Static vs dynamic: the environment can change while the agent is deliberating. In case it does, we deal with dynamicity. If it is just the agent's performance score what changes over time, we talk about semidynamic systems.
-- Discrete vs continuous: the distinction can occur and apply on the states representation, on the way time is handled or on the percepts and actions of the agent.
-- Known vs unknown: this refers to the agent's state of knowledge about the "rules" or "laws" of the environment. It is possible for a known environment to be partially observable, and conversely for an unknown environment to be fully observable.
+- **Fully vs partially observable**: a task environment can be fully observable if sensors detects all relevant aspects for taking choices. A partial one may have noise o inaccuracy, or simply lack sensor data. If no sensor is available, environment is then unobservable; note that goals may be achievable even in this case scenario.
+- **Single vs multiagent**: just one agent can be implemented, or many of them can appear in a given scenario. These can be classified by their relationship, in fact, a multiagent environment can be competitive or cooperative. Communication can emerge between agents, or randomized behavior can appear as it is rational to avoid predictability.
+- **Deterministic vs nondeterministic**: if the following state is completely dependent on the current action, we say that the environment is deterministic, otherwise it is not. Nondeterministic and stochastic models found their difference whether probabilities are explicitly dealt with: stochastic environments provides precise probability values for its future possible branches of states, nondeterministic do not.
+- **Episodic vs sequential**: in sequential environment current decisions can affect all future decisions, otherwise it is episodic.
+- **Static vs dynamic**: the environment can change while the agent is deliberating. In case it does, we deal with dynamicity. If it is just the agent's performance score what changes over time, we talk about semidynamic systems.
+- **Discrete vs continuous**: the distinction can occur and apply on the states representation, on the way time is handled or on the percepts and actions of the agent.
+- **Known vs unknown**: this refers to the agent's state of knowledge about the "rules" or "laws" of the environment. It is possible for a known environment to be partially observable, and conversely for an unknown environment to be fully observable.
+# The structure of agents
+The end goal of AI is to design an agent program that reflects and implements the agent function.
+We can outline four basic kinds of agent programs:
+1. [simple reflex agents](#simple-reflex-agents),
+2. [model-based reflex agents](#model-based-reflex-agents),
+3. [goal-based agents](#goal-based-agents),
+4. [utility-based agents](#utility-based-agents).
+## Simple reflex agents
+This is the simplest kind of agent. The actions are just selected on the basis of the current percept, ignoring the history.
+This simple connection between perception and behavior is called condition-action rule.
+Often, infinite loops of actions are unavoidable for this agent when operating in partially observable environments, unless randomization can come into play.
+## Model-based reflex agents
+two
+## Goal-based agents
+three
+## Utility-based agents
+four

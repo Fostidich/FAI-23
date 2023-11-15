@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-[1 - Introduction]("./I - Artificial Intelligence/1 - Introduction.md")
+[1 - Introduction](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md)
 [3 - Solving Problems by Searching]("./II - Problem Solving/3 - Solving Problems by Searching.md")
 [4 - Search in Complex Environment]("./II - Problem Solving/4 - Search in Complex Environment.md")
 [5 - Adversarial Search and Games]("./II - Problem Solving/5 - Adversarial Search and Games.md")

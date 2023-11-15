@@ -1,4 +1,4 @@
-A problem solving agent searches for a correct sequence of action that reaches the goal state. This can be not immediately obvious so it is to be planned ahead. Representation used in this case are atomic, and for the environment it's easier to consider it episodic, single agent, fully observable, deterministic, static, discrete and known.
+A problem solving agent searches for a correct sequence of action that reaches the goal state. This can be not immediately obvious so it is to be planned ahead. Representation used in this case are atomic, and for the environment it's easier to consider it episodic, single agent, fully observable, deterministic, static, discrete and known.<br>
 Furthermore, two types of algorithms can be distinguished:
 - in the **informed algorithms** the agents is able to estimate how far the goal is;
 - in the **uninformed algorithms** the agent has no such estimation.
@@ -17,14 +17,13 @@ A search problem can be defined formally by providing its components.
 - **Transition model**: it describes what each action does. The method `result(s, a)` is to return the state resulting by taking action 'a' in state 's'.
 - **Action cost function**: denoted by `actionCost(s, a, s')`, which gives the numeric cost of applying action 'a' in state 's' to reach state 's''.
 
-An optimal solution is one that has the lowest path cost among all other solutions.
+An optimal solution is one that has the lowest path cost among all other solutions.<br>
 The state space can be represented as a graph, but the search itself requires other data structures.
 # Search algorithms
-Search algorithms takes a search problem as input and returns a solution (or a failure). These are algorithms that superimpose a search tree over the state-space graph.
-Each node corresponds to a state and each edge corresponds to an action. The root is the initial state.
-The search tree may have multiple paths to any given state, but each state has a unique path to the root.
-The region of the tree where not expanded nodes lay is called the frontier.
-How we decide which node of the frontier is to be expanded next is what defines each and every algorithm itself.
+Search algorithms takes a search problem as input and returns a solution (or a failure). These are algorithms that superimpose a search tree over the state-space graph.<br>
+Each node corresponds to a state and each edge corresponds to an action. The root is the initial state.<br>
+The search tree may have multiple paths to any given state, but each state has a unique path to the root.<br>
+The region of the tree where not expanded nodes lay is called the frontier. How we decide which node of the frontier is to be expanded next is what defines each and every algorithm itself.
 ## Search data structure
 A node from the tree is represented by a data structure containing:
 - `node.state` stores the corresponding state of the node,
@@ -43,13 +42,13 @@ Three kinds of queues are used in search algorithms:
 - a **FIFO queue** (first in first out) is used in the breadth-first search;
 - a **stack** (LIFO queue) is used in the depth-first search.
 
-We have to keep in mind that redundant paths are a thing, since the same node can sometimes be reached from more than a single path. We take in consideration just the one with the minor cost.
-But another kind of redundant paths is found in cycles, since the search is often performed in a graph, and so a path can contain a specific node more than just one time. We may have to deal with it.
-The best-first search remembers all previously reached states so to not expand the ones that have already been found.
-On the other side, sometimes repeating the past can be rare or impossible, so it is legit to not worry about repeating scenarios.
-If an algorithm does check redundant paths, we are dealing with **graph searches**, otherwise it is a **tree search**.
-Note that the same algorithm can sometimes accept either approaches.
-In the end, it is possible to limit our checks to cycles only, by looking for the same node we are extending it its path to the root. If it is already there, we do not expand it.
+We have to keep in mind that redundant paths are a thing, since the same node can sometimes be reached from more than a single path. We take in consideration just the one with the minor cost.<br>
+But another kind of redundant paths is found in cycles, since the search is often performed in a graph, and so a path can contain a specific node more than just one time. We may have to deal with it.<br>
+The best-first search remembers all previously reached states so to not expand the ones that have already been found.<br>
+On the other side, sometimes repeating the past can be rare or impossible, so it is legit to not worry about repeating scenarios.<br>
+If an algorithm does check redundant paths, we are dealing with **graph searches**, otherwise it is a **tree search**.<br>
+Note that the same algorithm can sometimes accept either approaches.<br>
+In the end, it is possible to limit our checks to cycles only, by looking for the same node we are extending it its path to the root. If it is already there, we do not expand it.<br>
 Finally, we can evaluate an algorithm performance in four ways.
 - **Completeness**: is the algorithm guaranteed to find a solution, if there's one?
 - **Cost optimality**: does it find a solution with the lowest path cost possible?
@@ -61,5 +60,5 @@ Furthermore, complexity requires some parameters to be defined:
 - *m* is the maximum number of actions in any path,
 - *b* is the branching factor, which is the number of successors of a node.
 ## Best-first search
-A very simple approach is the one that chooses the following node to expand based on an evaluation function `f(n)`.
+A very simple approach is the one that chooses the following node to expand based on an evaluation function `f(n)`.<br>
 Each node given as input returns a value; the node with the minimum value is the one that is chosen next.

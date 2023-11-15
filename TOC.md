@@ -1,9 +1,3 @@
-# FAI-23
-
-###### Notes from course "Foundations of Artificial Intelligence" at Polimi made by Francesco Ostidich
-
-## Table of contents
-
 - [./V](./V)
 - [./V](./V)
 - [./IV](./IV)

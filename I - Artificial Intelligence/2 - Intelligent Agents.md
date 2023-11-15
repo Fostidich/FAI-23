@@ -37,11 +37,11 @@ Many properties of this thus arise.
 # The structure of agents
 The end goal of AI is to design an agent program that reflects and implements the agent function.
 We can outline four basic kinds of agent programs:
-1. [simple reflex agents](#simple-reflex-agents),
+1. [simple reflex agents](#Simple-reflex-agents),
 2. [model-based reflex agents](#model-based-reflex-agents),
 3. [goal-based agents](#goal-based-agents),
 4. [utility-based agents](#utility-based-agents).
-## Simple reflex agents
+## Simple-reflex-agents
 This is the simplest kind of agent. The actions are just selected on the basis of the current percept, ignoring the history.
 This simple connection between perception and behavior is called condition-action rule.
 Often, infinite loops of actions are unavoidable for this agent when operating in partially observable environments, unless randomization can come into play.

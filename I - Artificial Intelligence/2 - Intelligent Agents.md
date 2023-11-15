@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Agents and environments](#agents-and-environments)
+- [The concept of rationality](#the-concept-of-rationality)
+- [The nature of environments](#the-nature-of-environments)
+- [The structure of agents](#the-structure-of-agents)
+  - [Simple reflex agents](#simple-reflex-agents)
+  - [Model-based reflex agents](#model-based-reflex-agents)
+  - [Goal-based agents](#goal-based-agents)
+  - [Utility-based agents](#utility-based-agents)
+  - [Learning agents](#learning-agents)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 A central approach to artificial intelligence comes with the concept of rational agents.
 The concept of rationality can be applied to a wide variety of agents operating in whichever environment is imaginable.
 Thanks to some design principles it is possible to build successful agents that can be called "intelligent".

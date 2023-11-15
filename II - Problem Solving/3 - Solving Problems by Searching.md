@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Problem solving agents](#problem-solving-agents)
+- [Search algorithms](#search-algorithms)
+  - [Search data structure](#search-data-structure)
+  - [Best-first search](#best-first-search)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 A problem solving agent searches for a correct sequence of action that reaches the goal state. This can be not immediately obvious so it is to be planned ahead. Representation used in this case are atomic, and for the environment it's easier to consider it episodic, single agent, fully observable, deterministic, static, discrete and known.
 Furthermore, two types of algorithms can be distinguished:
 - in the **informed algorithms** the agents is able to estimate how far the goal is;

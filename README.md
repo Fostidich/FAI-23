@@ -1,10 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [FAI-23](#fai-23)
+          - [Notes from course "Foundations of Artificial Intelligence" at Polimi made by Francesco Ostidich](#notes-from-course-foundations-of-artificial-intelligence-at-polimi-made-by-francesco-ostidich)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # FAI-23
 
-> **Table of contents**
-> 1. Artificial Intelligence
-> 	- [1 - Introduction](I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md)
-> 	- [2 - Intelligent Agents](I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md)
-> 2. Problem-solving
-> 	- [3 - Solving Problems by Searching](II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md)
+
 
 ###### Notes from course "Foundations of Artificial Intelligence" at Polimi made by Francesco Ostidich

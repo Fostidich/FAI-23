@@ -14,8 +14,8 @@ A search problem can be defined formally by providing its components.
 - **Initial state**: it is where the agent does start.
 - **Goal states**: these (if they are multiple indeed) are defined in a set, and can be identified by the `isGoal()` method.
 - **Actions**: a finite set of applicable actions, given a state, can be retrieved from an `action(s)` method.
-- **Transition model**: it describes what each action does. The method `result(s, a)` is to return the state resulting by taking action 'a' in state 's'.
-- **Action cost function**: denoted by `actionCost(s, a, s')`, which gives the numeric cost of applying action 'a' in state 's' to reach state 's''.
+- **Transition model**: it describes what each action does. The method `result(s, a)` is to return the state resulting by taking action *a* in state *s*.
+- **Action cost function**: denoted by `actionCost(s, a, s')`, which gives the numeric cost of applying action *a* in state *s* to reach state *s'*.
 
 An optimal solution is one that has the lowest path cost among all other solutions.<br>
 The state space can be represented as a graph, but the search itself requires other data structures.
@@ -29,7 +29,7 @@ A node from the tree is represented by a data structure containing:
 - `node.state` stores the corresponding state of the node,
 - `node.parent` stores the node that generated this node,
 - `node.action` is the action that lead from the parent node to this,
-- `node.pathCost` is the total cost of the path from the initial state (`g(node)`).
+- `node.pathCost` is the total cost of the path from the initial state ($g(node)$).
 
 The data structure for the frontier has its appropriate choice in a queue of some kind. The operation it requires are:
 - `isEmpty(frontier)` returns true only if no nodes are contained,
@@ -59,6 +59,20 @@ Furthermore, complexity requires some parameters to be defined:
 - *d* is the depth, or number of actions, in an optimal solution,
 - *m* is the maximum number of actions in any path,
 - *b* is the branching factor, which is the number of successors of a node.
+# Uninformed search strategies
+An uninformed search algorithm is given no clue about how close a state is to the goal.
+## Breadth-first search
+- All actions have the same cost
+- When all nodes are expanded, their successors are expanded next, and so on
+- It is complete even with infinite states
+- The frontier is a FIFO queue
+- It is possible to do an early goal test, meaning the check for a goal node can be done as soon as it is generated
+- It always finds the optimal solution
+- Time and space complexity is $O(b^d)$
 ## Best-first search
-A very simple approach is the one that chooses the following node to expand based on an evaluation function `f(n)`.<br>
-Each node given as input returns a value; the node with the minimum value is the one that is chosen next.
+- It can be called also Dijkstra's algorithm or uniform-cost search
+- Actions have different costs based on an evaluation function $f(n)$; the node with the minimum value is expanded next
+- The frontier is a priority queue
+- It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded
+- It is complete and cost-optimal, also in infinite spaces
+- Complexity is $O(b^{1 + \lfloor C^*/\epsilon \rfloor})$, where $C^*$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs

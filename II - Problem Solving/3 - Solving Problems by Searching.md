@@ -75,4 +75,4 @@ An uninformed search algorithm is given no clue about how close a state is to th
 - The frontier is a priority queue
 - It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded
 - It is complete and cost-optimal, also in infinite spaces
-- Complexity is $O(b^{1 + \lfloor \frac{C^*}{\epsilon} \rfloor})$, where $C^*$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs
+- Complexity is $O(b^{1 + \lfloor C^\ast/\epsilon \rfloor})$, where $C^*$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs

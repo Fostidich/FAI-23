@@ -56,14 +56,15 @@ Finally, we can evaluate an algorithm performance in four ways.
 - **Space complexity**: how much memory is needed to perform the search?
 
 Furthermore, complexity requires some parameters to be defined:
-- *d* is the depth, or number of actions, in an optimal solution,
-- *m* is the maximum number of actions in any path,
-- *b* is the branching factor, which is the number of successors of a node.
+- $d$ is the depth, or number of actions, in an optimal solution,
+- $m$ is the maximum number of actions in any path,
+- $b$ is the branching factor, which is the number of successors of a node.
 # Uninformed search strategies
 An uninformed search algorithm is given no clue about how close a state is to the goal.
 ## Breadth-first search
 - All actions have the same cost
 - When all nodes are expanded, their successors are expanded next, and so on
+- No repetition of nodes is allowed, meaning it's a graph search
 - It is complete even with infinite states
 - The frontier is a FIFO queue
 - It is possible to do an early goal test, meaning the check for a goal node can be done as soon as it is generated
@@ -72,7 +73,27 @@ An uninformed search algorithm is given no clue about how close a state is to th
 ## Best-first search
 - It can be called also Dijkstra's algorithm or uniform-cost search
 - Actions have different costs based on an evaluation function $f(n)$; the node with the minimum value is expanded next
+- It check for redundancies (graph search)
 - The frontier is a priority queue
 - It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded
 - It is complete and cost-optimal, also in infinite spaces
 - Complexity is $O(b^{1 + \lfloor C^\ast/\epsilon \rfloor})$, where $C^*$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs
+## Depth-first search
+- The deepest node in the frontier is always the next to be expanded. When the search reaches a node with no successors, it backs up to the unexpanded deepest node
+- It is a tree search (it allows duplicates)
+- It's not cost-optimal
+- It's complete for finite state spaces, also the ones with cycles (but they can be checked for optimization purposes). It's incomplete for infinite spaces
+- Memory requirements are $O(bm)$, or $O(m)$ if we use the **backtracking search**, which expands just one successor at a time
+## Depth-limited search
+- It is a version of the depth-first search where we supply a depth limit $l$, that stops nodes expansion when reached
+- Time complexity is $O(b^l)$ and space complexity is $O(bl)$
+- If $l$ is too low, the algorithm is incomplete
+## Iterative deepening search
+- It is a variant for the depth-limited search, in which we try all values of $l$ iteratively: 0, 1, 2...
+- It's optimal for cost-uniform actions and complete if we check for cycles
+- Memory requirements are $O(bd)$ if a solution exists, whereas $O(bm)$ if there's none
+- Time complexity is $O(b^d)$ if a solution exists, whereas $O(b^m)$ if there's none
+- - -
+## Bidirectional search
+If the cost from each state *s* to *s'* is the same backward, we can simultaneously use a search algorithm both ways, from the initial state and from the goal state. The solution will be then found when the two frontiers collide.
+For example, in a breadth-first search, complexity will be $O(b^{d/2}+b^{d/2}) = O(b^{d/2})$, which is much smaller than the monodirectional $O(b^d)$. 

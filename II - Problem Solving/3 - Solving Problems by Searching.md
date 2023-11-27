@@ -58,7 +58,9 @@ Finally, we can evaluate an algorithm performance in four ways.
 Furthermore, complexity requires some parameters to be defined:
 - $d$ is the depth, or number of actions, in an optimal solution,
 - $m$ is the maximum number of actions in any path,
-- $b$ is the branching factor, which is the number of successors of a node.
+- $b$ is the branching factor, which is the number of successors of a node,
+- $|V|$ is the number of vertices in the graph,
+- $|E|$ is the number of edges in the graph.
 # Uninformed search strategies
 An uninformed search algorithm is given no clue about how close a state is to the goal.
 ## Breadth-first search
@@ -96,4 +98,35 @@ An uninformed search algorithm is given no clue about how close a state is to th
 - - -
 ## Bidirectional search
 If the cost from each state *s* to *s'* is the same backward, we can simultaneously use a search algorithm both ways, from the initial state and from the goal state. The solution will be then found when the two frontiers collide.
-For example, in a breadth-first search, complexity will be $O(b^{d/2}+b^{d/2}) = O(b^{d/2})$, which is much smaller than the monodirectional $O(b^d)$. 
+For example, in a breadth-first search, complexity will be $O(b^{d/2}+b^{d/2}) = O(b^{d/2})$, which is much smaller than the unidirectional $O(b^d)$.
+# Informed search strategies
+Informed (heuristic) search uses hints about the location of goals. These hints come in the form of an heuristic function $h(n)$, that estimates the cost of the cheapest path from the state at node $n$ to a goal state.
+## Greedy best-first search
+- This search is similar to a best-fist search that has as evaluation function the heuristic function: $f(n) = h(n)$. Thus, it expands first the node with lower $h(n)$
+- The solution found is not optimal in cost
+- Time and space complexity is $O(|V|)$
+## A\* search
+- A\* search is a best-first search that uses as evaluation function the sum of the path cost from the initial node to the current and the estimated cost to a goal state: $f(n) = g(n) + h(n)$. In other words, $f(n)$ represents the estimated cost of the best path that continues from $n$ to a goal
+- An admissible heuristic function is one that never overestimates the cost to reach a goal (it's therefore optimistic)
+- A consistent heuristic function can be described by the triangle inequality: a side of a triangle cannot be longer than the sum of the other two sides. A consistent function is also admissible
+- A\* search is always complete
+- With an admissible function, A\* is cost-optimal
+- With a consistent function, the optimal path is found when the fist goal node is reached, therefore we can do an early goal test
+- With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^* - C_2$ (given $C_2$ the cost of the second optimal solution after $C^*$)
+- A\* with a consistent heuristic is optimally efficient, in the sense that every other algorithm doing the same search must expand all nodes that A\* surely has expanded. In fact, A\* prunes away loads of unnecessary nodes
+- A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^*$ and some that have $f(n) = C^*$. No node with $f(n) > C^*$ is expanded
+- If we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), we can limit the memory requirements. This can be accomplished by using a **weighted A\* search**, where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$. The solution found will have a cost between $C^*$ and $W \times C^*$
+- Weighted A\* search can be seen as a generalization of other searches: 
+
+> | Search                   | Evaluation          | Weight        |
+> |:-------------------------|:-------------------:|:-------------:|
+> | A* search                | $g(n) + h(n)$         | $W=1$          |
+> | Dijkstra's algorithm     | $g(n)$               | $W=0$          |
+> | Greedy best-first search | $h(n)$               | $W=\infty$      |
+> | Weighted A* search       | $g(n) + W \times h(n)$ | $1 < W < \infty$ |
+
+- - -
+## Bidirectional search
+Contrariwise from the uninformed searches, bidirectional informed searches are not always more efficient than unidirectional ones.<br>
+Even with admissible heuristic there's no guarantee that this would lead to a optimal-cost solution.<br>
+With a very good heuristic adding a bidirectional search does not help much. With an average one a bidirectional search will expand fewer nodes, so it can be preferred. With a bad heuristic function the complexity will not change from a unidirectional A*.

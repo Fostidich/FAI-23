@@ -79,7 +79,7 @@ An uninformed search algorithm is given no clue about how close a state is to th
 - The frontier is a priority queue
 - It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded
 - It is complete and cost-optimal, also in infinite spaces
-- Complexity is $O(b^{1 + \lfloor C^\ast/\epsilon \rfloor})$, where $C^*$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs
+- Complexity is $O(b^{1 + \lfloor C^\ast/\epsilon \rfloor})$, where $C^\ast$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs
 ## Depth-first search
 - The deepest node in the frontier is always the next to be expanded. When the search reaches a node with no successors, it backs up to the unexpanded deepest node
 - It is a tree search (it allows duplicates)
@@ -112,17 +112,17 @@ Informed (heuristic) search uses hints about the location of goals. These hints 
 - A\* search is always complete
 - With an admissible function, A\* is cost-optimal
 - With a consistent function, the optimal path is found when the fist goal node is reached, therefore we can do an early goal test
-- With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^* - C_2$ (given $C_2$ the cost of the second optimal solution after $C^*$)
+- With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^\ast - C_2$ (given $C_2$ the cost of the second optimal solution after $C^\ast$)
 - A\* with a consistent heuristic is optimally efficient, in the sense that every other algorithm doing the same search must expand all nodes that A\* surely has expanded. In fact, A\* prunes away loads of unnecessary nodes
-- A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^*$ and some that have $f(n) = C^*$. No node with $f(n) > C^*$ is expanded
-- If we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), we can limit the memory requirements. This can be accomplished by using a **weighted A\* search**, where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$. The solution found will have a cost between $C^*$ and $W \times C^*$
+- A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^\ast$ and some that have $f(n) = C^\ast$. No node with $f(n) > C^\ast$ is expanded
+- If we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), we can limit the memory requirements. This can be accomplished by using a **weighted A\* search**, where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$. The solution found will have a cost between $C^\ast$ and $W \times C^\ast$
 - Weighted A\* search can be seen as a generalization of other searches: 
 
-> | Search                   | Evaluation          | Weight        |
-> |:-------------------------|:-------------------:|:-------------:|
-> | A* search                | $g(n) + h(n)$         | $W=1$          |
-> | Dijkstra's algorithm     | $g(n)$               | $W=0$          |
-> | Greedy best-first search | $h(n)$               | $W=\infty$      |
+> | Search                   | Evaluation              | Weight           |
+> |:-------------------------|:-----------------------:|:----------------:|
+> | A* search                | $g(n) + h(n)$           | $W=1$           |
+> | Dijkstra's algorithm     | $g(n)$                  | $W=0$            |
+> | Greedy best-first search | $h(n)$                  | $W=\infty$       |
 > | Weighted A* search       | $g(n) + W \times h(n)$ | $1 < W < \infty$ |
 
 - - -

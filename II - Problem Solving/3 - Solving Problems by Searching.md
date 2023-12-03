@@ -115,7 +115,10 @@ Informed (heuristic) search uses hints about the location of goals. These hints 
 - With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^\ast - C_2$ (given $C_2$ the cost of the second optimal solution after $C^\ast$)
 - A\* with a consistent heuristic is optimally efficient, in the sense that every other algorithm doing the same search must expand all nodes that A\* surely has expanded. In fact, A\* prunes away loads of unnecessary nodes
 - A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^\ast$ and some that have $f(n) = C^\ast$. No node with $f(n) > C^\ast$ is expanded
-- If we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), we can limit the memory requirements. This can be accomplished by using a **weighted A\* search**, where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$. The solution found will have a cost between $C^\ast$ and $W \times C^\ast$
+## Weighted A\* search
+- It is a version of A\* search where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$
+- This algorithm is useful if we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), so that we can limit memory requirements 
+- The solution found will have a cost between $C^\ast$ and $W \times C^\ast$
 - Weighted A\* search can be seen as a generalization of other searches: 
 
 > | Search                   | Evaluation              | Weight           |
@@ -123,7 +126,7 @@ Informed (heuristic) search uses hints about the location of goals. These hints 
 > | [A\* search](#a-search) | $g(n) + h(n)$ | $W=1$ |
 > | [Dijkstra's algorithm](#best-first-search) | $g(n)$ | $W=0$ |
 > | [Greedy best-first search](#greedy-best-first-search) | $h(n)$ | $W=\infty$ |
-> | [Weighted A* search](#a-search) | $g(n) + W \times h(n)$ | $1 < W < \infty$ |
+> | [Weighted A* search](#weighted-a-search) | $g(n) + W \times h(n)$ | $1 < W < \infty$ |
 
 - - -
 ## Bidirectional search

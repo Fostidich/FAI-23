@@ -120,10 +120,10 @@ Informed (heuristic) search uses hints about the location of goals. These hints 
 
 > | Search                   | Evaluation              | Weight           |
 > |:-------------------------|:-----------------------:|:----------------:|
-> | A* search                | $g(n) + h(n)$           | $W=1$           |
-> | Dijkstra's algorithm     | $g(n)$                  | $W=0$            |
-> | Greedy best-first search | $h(n)$                  | $W=\infty$       |
-> | Weighted A* search       | $g(n) + W \times h(n)$ | $1 < W < \infty$ |
+> | [A\* search](#a-search) | $g(n) + h(n)$ | $W=1$ |
+> | [Dijkstra's algorithm](#best-first-search) | $g(n)$ | $W=0$ |
+> | [Greedy best-first search](#greedy-best-first-search) | $h(n)$ | $W=\infty$ |
+> | [Weighted A* search](#a-search) | $g(n) + W \times h(n)$ | $1 < W < \infty$ |
 
 - - -
 ## Bidirectional search

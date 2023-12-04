@@ -29,8 +29,8 @@
 ## Progress
 | Done | Date | Link | Chapter |
 |:----:|:----:|:-----|:--------|
-| <input type="checkbox" disabled checked /> | 15/09 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 1, 2.1-2.3 |
-| <input type="checkbox" disabled checked /> | 18/09 | [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 2.4 |
+| - [x] | 15/09 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 1, 2.1-2.3 |
+| - [ ] | 18/09 | [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 2.4 |
 | <input type="checkbox" disabled checked /> | 22/09 | [II-3](./II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md) | 3.1-3.3 |
 | <input type="checkbox" disabled checked /> | 25/09 | [V-12](./V%20-%20Machine%20Learning/12%20-%20Learning%20from%20Examples.md), [V-13](./V%20-%20Machine%20Learning/13%20-%20Reinforcement%20Learning.md) | 19.1-19.2, 22.1 |
 | <input type="checkbox" disabled checked /> | 29/09 | [II-3](./II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md) | 3.4 |

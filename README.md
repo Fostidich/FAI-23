@@ -29,8 +29,8 @@
 ## Progress
 | Done | Date | Link | Chapter |
 |:----:|:----:|:-----|:--------|
-| <ul><li>- [x]</li></ul> | 15/09 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 1, 2.1-2.3 |
-| <li>- [ ]</li> | 18/09 | [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 2.4 |
+| :white_check_mark: | 15/09 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 1, 2.1-2.3 |
+| :white_check_mark | 18/09 | [I-2](./I%20-%20Artificial%20Intelligence/2%20-%20Intelligent%20Agents.md) | 2.4 |
 | <input type="checkbox" checked /> | 22/09 | [II-3](./II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md) | 3.1-3.3 |
 | <input type="checkbox" disabled checked /> | 25/09 | [V-12](./V%20-%20Machine%20Learning/12%20-%20Learning%20from%20Examples.md), [V-13](./V%20-%20Machine%20Learning/13%20-%20Reinforcement%20Learning.md) | 19.1-19.2, 22.1 |
 | <input type="checkbox" disabled checked /> | 29/09 | [II-3](./II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md) | 3.4 |
@@ -40,7 +40,7 @@
 | <input type="checkbox" disabled checked /> | 13/10 |  |  |
 | <input type="checkbox" disabled checked /> | 16/10 |  |  |
 | <input type="checkbox" disabled checked /> | 20/10 |  |  |
-| <input type="checkbox" disabled /> | 23/10 | [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 6.1/6.3 |
+| :white_large_square: | 23/10 | [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 6.1/6.3 |
 | <input type="checkbox" disabled /> | 27/10 | [V-13](./V%20-%20Machine%20Learning/13%20-%20Reinforcement%20Learning.md) | 22.1/22.3 |
 | <input type="checkbox" disabled /> | 30/10 | [II-4](./II%20-%20Problem%20Solving/4%20-%20Search%20in%20Complex%20Environment.md), [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 4.1.1, 6.2/6.4 |
 | <input type="checkbox" disabled /> | 10/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md), [III-8](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/8%20-%20First%20Order%20Logic.md) | 7.1/7.3-7.4, 8 |

@@ -64,37 +64,37 @@ Furthermore, complexity requires some parameters to be defined:
 # Uninformed search strategies
 An uninformed search algorithm is given no clue about how close a state is to the goal.
 ## Breadth-first search
-- All actions have the same cost
-- When all nodes are expanded, their successors are expanded next, and so on
-- No repetition of nodes is allowed, meaning it's a graph search
-- It is complete even with infinite states
-- The frontier is a FIFO queue
-- It is possible to do an early goal test, meaning the check for a goal node can be done as soon as it is generated
-- It always finds the optimal solution
-- Time and space complexity is $O(b^d)$
+- All actions have the same cost.
+- When all nodes are expanded, their successors are expanded next, and so on.
+- No repetition of nodes is allowed, meaning it's a graph search.
+- It is complete even with infinite states.
+- The frontier is a FIFO queue.
+- It is possible to do an early goal test, meaning the check for a goal node can be done as soon as it is generated.
+- It always finds the optimal solution.
+- Time and space complexity is $O(b^d)$.
 ## Best-first search
-- It can be called also Dijkstra's algorithm or uniform-cost search
-- Actions have different costs based on an evaluation function $f(n)$; the node with the minimum value is expanded next
-- It check for redundancies (graph search)
-- The frontier is a priority queue
-- It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded
-- It is complete and cost-optimal, also in infinite spaces
-- Complexity is $O(b^{1 + \lfloor C^\ast/\epsilon \rfloor})$, where $C^\ast$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs
+- It can be called also Dijkstra's algorithm or uniform-cost search.
+- Actions have different costs based on an evaluation function $f(n)$; the node with the minimum value is expanded next.
+- It check for redundancies (graph search).
+- The frontier is a priority queue.
+- It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded.
+- It is complete and cost-optimal, also in infinite spaces.
+- Complexity is $O(b^{1 + \lfloor C^\ast/\epsilon \rfloor})$, where $C^\ast$ is the cost of the optimal solution, and where $\epsilon > 0$ is the minimum between all the actions costs.
 ## Depth-first search
-- The deepest node in the frontier is always the next to be expanded. When the search reaches a node with no successors, it backs up to the unexpanded deepest node
-- It is a tree search (it allows duplicates)
-- It's not cost-optimal
-- It's complete for finite state spaces, also the ones with cycles (but they can be checked for optimization purposes). It's incomplete for infinite spaces
-- Memory requirements are $O(bm)$, or $O(m)$ if we use the **backtracking search**, which expands just one successor at a time
+- The deepest node in the frontier is always the next to be expanded. When the search reaches a node with no successors, it backs up to the unexpanded deepest node.
+- It is a tree search (it allows duplicates).
+- It's not cost-optimal.
+- It's complete for finite state spaces, also the ones with cycles (but they can be checked for optimization purposes). It's incomplete for infinite spaces.
+- Memory requirements are $O(bm)$, or $O(m)$ if we use the **backtracking search**, which expands just one successor at a time.
 ## Depth-limited search
-- It is a version of the depth-first search where we supply a depth limit $l$, that stops nodes expansion when reached
-- Time complexity is $O(b^l)$ and space complexity is $O(bl)$
-- If $l$ is too low, the algorithm is incomplete
+- It is a version of the depth-first search where we supply a depth limit $l$, that stops nodes expansion when reached.
+- Time complexity is $O(b^l)$ and space complexity is $O(bl)$.
+- If $l$ is too low, the algorithm is incomplete.
 ## Iterative deepening search
 - It is a variant for the depth-limited search, in which we try all values of $l$ iteratively: 0, 1, 2...
-- It's optimal for cost-uniform actions and complete if we check for cycles
-- Memory requirements are $O(bd)$ if a solution exists, whereas $O(bm)$ if there's none
-- Time complexity is $O(b^d)$ if a solution exists, whereas $O(b^m)$ if there's none
+- It's optimal for cost-uniform actions and complete if we check for cycles.
+- Memory requirements are $O(bd)$ if a solution exists, whereas $O(bm)$ if there's none.
+- Time complexity is $O(b^d)$ if a solution exists, whereas $O(b^m)$ if there's none.
 - - -
 ## Bidirectional search
 If the cost from each state *s* to *s'* is the same backward, we can simultaneously use a search algorithm both ways, from the initial state and from the goal state. The solution will be then found when the two frontiers collide.
@@ -102,24 +102,24 @@ For example, in a breadth-first search, complexity will be $O(b^{d/2}+b^{d/2}) =
 # Informed search strategies
 Informed (heuristic) search uses hints about the location of goals. These hints come in the form of an heuristic function $h(n)$, that estimates the cost of the cheapest path from the state at node $n$ to a goal state.
 ## Greedy best-first search
-- This search is similar to a best-fist search that has as evaluation function the heuristic function: $f(n) = h(n)$. Thus, it expands first the node with lower $h(n)$
-- The solution found is not optimal in cost
-- Time and space complexity is $O(|V|)$
+- This search is similar to a best-fist search that has as evaluation function the heuristic function: $f(n) = h(n)$. Thus, it expands first the node with lower $h(n)$.
+- The solution found is not optimal in cost.
+- Time and space complexity is $O(|V|)$.
 ## A\* search
-- A\* search is a best-first search that uses as evaluation function the sum of the path cost from the initial node to the current and the estimated cost to a goal state: $f(n) = g(n) + h(n)$. In other words, $f(n)$ represents the estimated cost of the best path that continues from $n$ to a goal
-- An admissible heuristic function is one that never overestimates the cost to reach a goal (it's therefore optimistic)
-- A consistent heuristic function can be described by the triangle inequality: a side of a triangle cannot be longer than the sum of the other two sides. A consistent function is also admissible
-- A\* search is always complete
-- With an admissible function, A\* is cost-optimal
-- With a consistent function, the optimal path is found when the fist goal node is reached, therefore we can do an early goal test
-- With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^\ast - C_2$ (given $C_2$ the cost of the second optimal solution after $C^\ast$)
-- A\* with a consistent heuristic is optimally efficient, in the sense that every other algorithm doing the same search must expand all nodes that A\* surely has expanded. In fact, A\* prunes away loads of unnecessary nodes
-- A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^\ast$ and some that have $f(n) = C^\ast$. No node with $f(n) > C^\ast$ is expanded
+- A\* search is a best-first search that uses as evaluation function the sum of the path cost from the initial node to the current and the estimated cost to a goal state: $f(n) = g(n) + h(n)$. In other words, $f(n)$ represents the estimated cost of the best path that continues from $n$ to a goal.
+- An admissible heuristic function is one that never overestimates the cost to reach a goal (it's therefore optimistic).
+- A consistent heuristic function can be described by the triangle inequality: a side of a triangle cannot be longer than the sum of the other two sides. A consistent function is also admissible.
+- A\* search is always complete.
+- With an admissible function, A\* is cost-optimal.
+- With a consistent function, the optimal path is found when the fist goal node is reached, therefore we can do an early goal test.
+- With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^\ast - C_2$ (given $C_2$ the cost of the second optimal solution after $C^\ast$).
+- A\* with a consistent heuristic is optimally efficient, in the sense that every other algorithm doing the same search must expand all nodes that A\* surely has expanded. In fact, A\* prunes away loads of unnecessary nodes.
+- A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^\ast$ and some that have $f(n) = C^\ast$. No node with $f(n) > C^\ast$ is expanded.
 ## Weighted A\* search
-- It is a version of A\* search where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$
-- This algorithm is useful if we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), so that we can limit memory requirements 
-- The solution found will have a cost between $C^\ast$ and $W \times C^\ast$
-- Weighted A\* search can be seen as a generalization of other searches: 
+- It is a version of A\* search where the evaluation function is $f(n) = g(n) + W \times h(n)$ with $W>1$.
+- This algorithm is useful if we accept satisficing solutions (suboptimal ones), found by searches with inadmissible heuristics (that overestimates), so that we can limit memory requirements.
+- The solution found will have a cost between $C^\ast$ and $W \times C^\ast$.
+- Weighted A\* search can be seen as a generalization of other searches.
 
 > | Search                   | Evaluation              | Weight           |
 > |:-------------------------|:-----------------------:|:----------------:|

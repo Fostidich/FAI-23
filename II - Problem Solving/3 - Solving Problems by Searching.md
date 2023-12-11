@@ -1,9 +1,9 @@
-A problem solving agent searches for a correct sequence of action that reaches the goal state. This can be not immediately obvious so it is to be planned ahead. Representation used in this case are atomic, and for the environment it's easier to consider it episodic, single agent, fully observable, deterministic, static, discrete and known.<br>
+A problem-solving agent searches for a correct sequence of action that reaches the goal state. This can be not immediately obvious, so it is to be planned ahead. Representation used in this case are atomic, and for the environment it's easier to consider it episodic, single agent, fully observable, deterministic, static, discrete and known.<br>
 Furthermore, two types of algorithms can be distinguished:
 - in the **informed algorithms** the agents is able to estimate how far the goal is;
 - in the **uninformed algorithms** the agent has no such estimation.
-# Problem solving agents
-Assuming the agent always has access to information about the world, a four-phase process can be followed for problem solving:
+# Problem-solving agents
+Assuming the agent always has access to information about the world, a four-phase process can be followed for problem-solving:
 1. the **goal formulation** is useful for limiting objectives and thus actions to be considered;
 2. the **problem formulation** wants to provide a mathematical abstract model to describe states and actions necessary to reach the goal. Abstraction is the process of removing not useful details from the real world problem;
 3. before any action is taken, a **search** is made by simulating sequences of actions in the model until a solution path reaching the goal is found;
@@ -23,7 +23,7 @@ The state space can be represented as a graph, but the search itself requires ot
 Search algorithms takes a search problem as input and returns a solution (or a failure). These are algorithms that superimpose a search tree over the state-space graph.<br>
 Each node corresponds to a state and each edge corresponds to an action. The root is the initial state.<br>
 The search tree may have multiple paths to any given state, but each state has a unique path to the root.<br>
-The region of the tree where not expanded nodes lay is called the frontier. How we decide which node of the frontier is to be expanded next is what defines each and every algorithm itself.
+The region of the tree where unexpanded nodes lay is called the frontier. How we decide which node of the frontier is to be expanded next is what defines each and every algorithm itself.
 ## Search data structure
 A node from the tree is represented by a data structure containing:
 - `node.state` stores the corresponding state of the node,
@@ -44,7 +44,7 @@ Three kinds of queues are used in search algorithms:
 
 We have to keep in mind that redundant paths are a thing, since the same node can sometimes be reached from more than a single path. We take in consideration just the one with the minor cost.<br>
 But another kind of redundant paths is found in cycles, since the search is often performed in a graph, and so a path can contain a specific node more than just one time. We may have to deal with it.<br>
-The best-first search remembers all previously reached states so to not expand the ones that have already been found.<br>
+The best-first search remembers all previously reached states, so that the ones that have already been found are not expanded.<br>
 On the other side, sometimes repeating the past can be rare or impossible, so it is legit to not worry about repeating scenarios.<br>
 If an algorithm does check redundant paths, we are dealing with **graph searches**, otherwise it is a **tree search**.<br>
 Note that the same algorithm can sometimes accept either approaches.<br>
@@ -52,7 +52,7 @@ In the end, it is possible to limit our checks to cycles only, by looking for th
 Finally, we can evaluate an algorithm performance in four ways.
 - **Completeness**: is the algorithm guaranteed to find a solution, if there's one?
 - **Cost optimality**: does it find a solution with the lowest path cost possible?
-- **Time complexity**: how long does it takes to find a solution?
+- **Time complexity**: how long does it take to find a solution?
 - **Space complexity**: how much memory is needed to perform the search?
 
 Furthermore, complexity requires some parameters to be defined:
@@ -73,9 +73,9 @@ An uninformed search algorithm is given no clue about how close a state is to th
 - It always finds the optimal solution.
 - Time and space complexity is $O(b^d)$.
 ## Best-first search
-- It can be called also Dijkstra's algorithm or uniform-cost search.
+- It can also be called Dijkstra's algorithm or uniform-cost search.
 - Actions have different costs based on an evaluation function $f(n)$; the node with the minimum value is expanded next.
-- It check for redundancies (graph search).
+- It checks for redundancies (graph search).
 - The frontier is a priority queue.
 - It requires a late goal test, therefore the check for goal nodes needs to wait until the node is popped from the queue, so when it is the lowest-cost node that has just been expanded.
 - It is complete and cost-optimal, also in infinite spaces.
@@ -87,11 +87,11 @@ An uninformed search algorithm is given no clue about how close a state is to th
 - It's complete for finite state spaces, also the ones with cycles (but they can be checked for optimization purposes). It's incomplete for infinite spaces.
 - Memory requirements are $O(bm)$, or $O(m)$ if we use the **backtracking search**, which expands just one successor at a time.
 ## Depth-limited search
-- It is a version of the depth-first search where we supply a depth limit $l$, that stops nodes expansion when reached.
+- It is a version of the depth-first search where we supply a depth limit $l$, that stops nodes' expansion when reached.
 - Time complexity is $O(b^l)$ and space complexity is $O(bl)$.
 - If $l$ is too low, the algorithm is incomplete.
 ## Iterative deepening search
-- It is a variant for the depth-limited search, in which we try all values of $l$ iteratively: 0, 1, 2...
+- It is a variant of the depth-limited search, in which we try all values of $l$ iteratively: 0, 1, 2...
 - It's optimal for cost-uniform actions and complete if we check for cycles.
 - Memory requirements are $O(bd)$ if a solution exists, whereas $O(bm)$ if there's none.
 - Time complexity is $O(b^d)$ if a solution exists, whereas $O(b^m)$ if there's none.
@@ -100,18 +100,18 @@ An uninformed search algorithm is given no clue about how close a state is to th
 If the cost from each state *s* to *s'* is the same backward, we can simultaneously use a search algorithm both ways, from the initial state and from the goal state. The solution will be then found when the two frontiers collide.
 For example, in a breadth-first search, complexity will be $O(b^{d/2}+b^{d/2}) = O(b^{d/2})$, which is much smaller than the unidirectional $O(b^d)$.
 # Informed search strategies
-Informed (heuristic) search uses hints about the location of goals. These hints come in the form of an heuristic function $h(n)$, that estimates the cost of the cheapest path from the state at node $n$ to a goal state.
+Informed (heuristic) search uses hints about the location of goals. These hints come in the form of a heuristic function $h(n)$, that estimates the cost of the cheapest path from the state at node $n$ to a goal state.
 ## Greedy best-first search
 - This search is similar to a best-fist search that has as evaluation function the heuristic function: $f(n) = h(n)$. Thus, it expands first the node with lower $h(n)$.
 - The solution found is not optimal in cost.
 - Time and space complexity is $O(|V|)$.
 ## A\* search
-- A\* search is a best-first search that uses as evaluation function the sum of the path cost from the initial node to the current and the estimated cost to a goal state: $f(n) = g(n) + h(n)$. In other words, $f(n)$ represents the estimated cost of the best path that continues from $n$ to a goal.
+- A\* search is a best-first search that uses as the evaluation function the sum of the path cost from the initial node to the current and the estimated cost to a goal state: $f(n) = g(n) + h(n)$. In other words, $f(n)$ represents the estimated cost of the best path that continues from $n$ to a goal.
 - An admissible heuristic function is one that never overestimates the cost to reach a goal (it's therefore optimistic).
 - A consistent heuristic function can be described by the triangle inequality: a side of a triangle cannot be longer than the sum of the other two sides. A consistent function is also admissible.
 - A\* search is always complete.
-- With an admissible function, A\* is cost-optimal.
-- With a consistent function, the optimal path is found when the fist goal node is reached, therefore we can do an early goal test.
+- If the heuristic function is admissible, A\* is cost-optimal.
+- With a consistent function, the optimal path is found when the first goal node is reached, therefore we can do an early goal test.
 - With inadmissible heuristic, the search will find the optimal solution only if two scenarios are guaranteed: the heuristic can be admissible just for the optimal path and must not overestimate more than $C^\ast - C_2$ (given $C_2$ the cost of the second optimal solution after $C^\ast$).
 - A\* with a consistent heuristic is optimally efficient, in the sense that every other algorithm doing the same search must expand all nodes that A\* surely has expanded. In fact, A\* prunes away loads of unnecessary nodes.
 - A\* has a lot of qualities, but it expands a lot of nodes. It surely expands all nodes that have $f(n) < C^\ast$ and some that have $f(n) = C^\ast$. No node with $f(n) > C^\ast$ is expanded.
@@ -131,5 +131,5 @@ Informed (heuristic) search uses hints about the location of goals. These hints 
 - - -
 ## Bidirectional search
 Contrariwise from the uninformed searches, bidirectional informed searches are not always more efficient than unidirectional ones.<br>
-Even with admissible heuristic there's no guarantee that this would lead to a optimal-cost solution.<br>
-With a very good heuristic adding a bidirectional search does not help much. With an average one a bidirectional search will expand fewer nodes, so it can be preferred. With a bad heuristic function the complexity will not change from a unidirectional A*.
+Even with admissible heuristic, there's no guarantee that this would lead to an optimal-cost solution.<br>
+If the heuristic is very good, adding a bidirectional search does not help much. With an average one, a bidirectional search will expand fewer nodes, so it can be preferred. With a bad heuristic function, the complexity will not change from a unidirectional A*.

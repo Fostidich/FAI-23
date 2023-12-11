@@ -1,5 +1,5 @@
 An agent is learning if it improves its performance after making observation about the world.<br>
-When the agent is a computer, we call machine learning the process of observing data and using it to build an hypothetical model.
+When the agent is a computer, we call "machine learning" the process of observing data and using it to build a hypothetical model.
 # Forms of learning
 Any component of an agent program can be improved by machine learning. Improvements depends on:
 1. which component is to be improved,
@@ -12,15 +12,15 @@ The components of an agent include:
 - information about world evolution as a result of the possible actions,
 - indication of states desirability,
 - indication of actions desirability,
-- a description for goals,
+- a description of goals,
 - a problem generator, a critic and a learning element.
 
-Usually the input of a problem is given as a factored representation, like a vector of attribute values.<br>
+Usually, the input of a problem is given as a factored representation, like a vector of attribute values.<br>
 If the output is one of a finite (discrete) set, the problem is called "classification". When it is a number (continuous) it's named regression.<br>
-There are three types of feedback linked to the inputs. These defines three different types of learning.
+There are three types of feedback linked to the inputs. These define three different types of learning.
 - **Supervised learning**: the agent observes the input-output pairs and learns a function that maps the one to the other. The learned function is to predict the appropriate label.
 - **Unsupervised learning**: the agent learns patterns in the input without explicit feedback. A common task is to find useful clusters in the input set.
-- **Reinforcement learning**: the agent uses series of rewards and penalty to learn. It aims to get more rewards in the future by altering its actions.
+- **Reinforcement learning**: the agent uses a series of rewards and penalty to learn. It aims to get more rewards in the future by altering its actions.
 # Supervised learning
 Formally, the task of supervised learning is the following.
 > Given a training set of $N$ example input-output pairs
@@ -31,9 +31,9 @@ The $h$ function is called "hypothesis", and it's drawn from a hypothesis space 
 We can say that $h$ is a model drawn from a model class $H$.<br>
 Given the input $x_i$ the agent tries to predict the output $y_i$, which is the ground truth.<br>
 If no prior knowledge is provided, an exploratory data analysis is required to get initial statistical examinations.<br>
-In the end, we can hope for a consistent hypothesis that maps every input correctly, but especially with continuous-valued outputs, we just look for a best-fit function. Anyway, a function is good if it handles well never-seen inputs (test set); $h$ generalizes well if it accurately predict the outputs.<br>
+In the end, we can hope for a consistent hypothesis that maps every input correctly, but especially with continuous-valued outputs, we just look for a best-fit function. Anyway, a function is good if it handles well never-seen inputs (test set); $h$ generalizes well if it accurately predicts the outputs.<br>
 An important trade-off is the bias-variance one.<br>
-The bias is the tendency of an hypothesis to deviate from the expected value, and it is calculated over different training sets by taking the average. Hypothesis is underfitting when it fails to find a pattern in the data.<br>
-The variance is the amount of changes made in the hypothesis, based on how wide are the fluctuation in the training data. Hypothesis is overfitting when it pays to much attention to little variations in the data.<br>
+The bias is the tendency of a hypothesis to deviate from the expected value, and it is calculated over different training sets by taking the average. A hypothesis is underfitting when it fails to find a pattern in the data.<br>
+The variance is the amount of changes made in the hypothesis, based on how wide are the fluctuation in the training data. Hypothesis is overfitting when it pays too much attention to little variations in the data.<br>
 Supervised learning can be done by choosing the hypothesis $h^*$ that is the most probable given the data. Bayes rule often comes useful when operating with probability.<br>
 Another important trade-off is the expressiveness-complexity one. Especially deep learning uses representation that are not simple (not very expressive), but doing this guarantees that the computation is doable in a bounded number of steps.

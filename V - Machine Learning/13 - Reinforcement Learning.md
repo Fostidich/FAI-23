@@ -10,4 +10,5 @@ Furthermore, there can be a classification for whether the RL is passive or acti
 - an **active RL** fixes the agent's policy and the task is to learn the utilities of the states (this can make use of a model);
 - in a **passive RL** the agent must also figure out what to do, and thus the principal issue is exploration.
 
-In the end, another alternative does exist, that is to use demonstration rather than reward signals. This is the case of an **apprenticeship learning**.
+In the end, another alternative does exist, that is to use demonstration rather than reward signals. This is the case of an **apprenticeship learning**.<br>
+In active and passive RL, learning is usually achieved using two general approaches, Active Dynamic Programming (ADP) and Temporal Difference (TD), in which ADP prefers the exploration of all possible actions, weighting their probabilities of success, whereas TD works by adjusting the estimated utility of an action, based on observed transitions.

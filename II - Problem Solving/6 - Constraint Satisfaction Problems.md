@@ -2,7 +2,7 @@ In a constraint satisfaction problem (CSP) states come with a factored represent
 A problem is solved when each variable has a value that satisfies all its constraint.
 # Definition
 A CSP consists of three components.
-1. A set of variables $X = \{ X_1, ..., X_n \}$
+1. A set of variables $X = \\\{ X_1, ..., X_n \\\}$
 2. A set of domains $D = \{ D_1, ..., D_n \}$
 3. A set of constraints $C = \{ C_1, ..., C_m \}$
 

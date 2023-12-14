@@ -40,8 +40,8 @@
 | :white_check_mark: | 13/10 |  |  |
 | :white_check_mark: | 16/10 |  |  |
 | :white_check_mark: | 20/10 |  |  |
-| :white_large_square: | 23/10 | [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 6.1/6.3 |
-| :white_large_square: | 27/10 | [V-13](./V%20-%20Machine%20Learning/13%20-%20Reinforcement%20Learning.md) | 22.1-22.3 |
+| :white_check_mark: | 23/10 | [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 6.1/6.3 |
+| :white_check_mark: | 27/10 | [V-13](./V%20-%20Machine%20Learning/13%20-%20Reinforcement%20Learning.md) | 22.1-22.3 |
 | :white_large_square: | 30/10 | [II-4](./II%20-%20Problem%20Solving/4%20-%20Search%20in%20Complex%20Environment.md), [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 4.1.1, 6.2/6.4 |
 | :white_large_square: | 10/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md), [III-8](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/8%20-%20First%20Order%20Logic.md) | 7.1/7.3-7.4, 8 |
 | :white_large_square: | 14/11 |  |  |

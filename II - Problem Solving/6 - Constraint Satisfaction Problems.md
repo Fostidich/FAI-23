@@ -2,9 +2,9 @@ In a constraint satisfaction problem (CSP) states come with a factored represent
 A problem is solved when each variable has a value that satisfies all its constraint.
 # Definition
 A CSP consists of three components.
-1. A set of variables $X = \{X_1, ..., X_n\}$
-2. A set of domains $D = \{D_1, ..., D_n\}$
-3. A set of constraints $C = \{C_1, ..., C_m\}$
+1. A set of variables $X = \{ X_1, ..., X_n \}$
+2. A set of domains $D = \{ D_1, ..., D_n \}$
+3. A set of constraints $C = \{ C_1, ..., C_m \}$
 
 Each domain $D_i$ consists of a set of allowable values $\{v_1,...v_k\}$ for its assigned variable $X_i$.<br>
 Each constraint $C_j$ is a pair $\langle scope, relation \rangle$, where the scope defines the variables that participate in the constraint relation; a constraint example may be $\langle (X_1, X_2), X_1 > X_2 \rangle$.<br>

@@ -24,7 +24,7 @@ It is possible to recognize two types of strategies that can be adopted to play 
 - a Type A strategy considers all moves to a given depth, therefore the tree will be wide but shallow;
 - a Type B strategy follows promising branches as far as possible, therefore the tree will be deep but narrow.
 ## Minimax search
-- The minimax algorithm performs a complete [depth-first](../II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md#depth-first-search) exploration of the game tree.
+- The minimax algorithm performs a complete [depth-first](./3%20-%20Solving%20Problems%20by%20Searching.md#depth-first-search) exploration of the game tree.
 - The optimal decision is determined by the outcome of a minimax function (used as evaluation function), in order to choose the optimal path (the one that leads to the state with the highest minimax value).
 - The simulated game tree always assumes that MAX takes the maximum value while MIN takes the minimum (both players play optimally). If a state is terminal, `minimax(s)` equals `utility(s, MAX)`.
 - Given $m$ the maximum depth of the tree and $b$ the number of legal moves at each point, time complexity is $O(b^m)$. Space complexity is $O(bm)$, or $O(m)$ if we use backtracking.

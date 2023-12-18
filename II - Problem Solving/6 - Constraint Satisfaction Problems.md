@@ -73,5 +73,5 @@ For each variable, we can keep track of the other variables that made a value im
 The **conflict-directed backjumping** method backtracks to the most recent assignments in the conflict set.<br>
 Important to notice is that every branch pruned by backtracking is also pruned by forward checking, hence the use of both may be redundant.<br>
 To explain how new conflict sets are computed, we denote $\textnormal{conf}(X_i)$ the set for variable $X_i$.<br>
-If every possible value for the current variable $X_j$ fails, the algorithm backjumps to the most recent variable $X_i$ in $\textnormal{conf}(X_j)$, and the conflict set for $X_i$ is recomputed as follows.$$\textnormal{conf}(X_i)=\textnormal{conf}_{old}(X_i)\cup\textnormal{conf}(X_j)-\\\{X_j\\\}$$
+If every possible value for the current variable $X_j$ fails, the algorithm backjumps to the most recent variable $X_i$ in $\textnormal{conf}(X_j)$, and the conflict set for $X_i$ is recomputed as follows. $$\textnormal{conf}(X_i)=\textnormal{conf}_{old}(X_i)\cup\textnormal{conf}(X_j)-\\\{X_j\\\}$$
 In the end, further optimizations could be acquired with constraint learning, that uses the idea of finding a minimum set (no-good set) of variables that actually cause the problem, from the conflict set.

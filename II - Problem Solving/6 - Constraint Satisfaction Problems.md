@@ -75,3 +75,8 @@ Important to notice is that every branch pruned by backtracking is also pruned b
 To explain how new conflict sets are computed, we denote $\textnormal{conf}(X_i)$ the set for variable $X_i$.<br>
 If every possible value for the current variable $X_j$ fails, the algorithm backjumps to the most recent variable $X_i$ in $\textnormal{conf}(X_j)$, and the conflict set for $X_i$ is recomputed as follows. $$\textnormal{conf}(X_i)=\textnormal{conf}_{old}(X_i)\cup\textnormal{conf}(X_j)-\\\{X_j\\\}$$
 In the end, further optimizations could be acquired with constraint learning, that uses the idea of finding a minimum set (no-good set) of variables that actually cause the problem, from the conflict set.
+# Local search
+In solving CSPs with a complete-state formulation (where each variable has always assigned a value, also if it is not consistent), local search algorithms are very effective. They work by changing a value of one variable at a time.<br>
+The simplest heuristic is the **min-conflict**, in which the value selected at each iteration is the one that results in the fewer conflicts.<br>
+In these problems, a series of plateaus usually appears, so it is a good idea to allow sideways moves. With a **tabu search**, we keep a list of recent visited states to forbid the algorithm to wander around indefinitely.<br>
+With the **constraint weighting** technique, we can focus the search on important constraints by giving each a weight (1 initially); the change that will result in the lowest total weight of violated constraints is the one selected. The weight of these constraints is then incremented.

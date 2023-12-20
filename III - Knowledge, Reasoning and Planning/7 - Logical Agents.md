@@ -44,7 +44,24 @@ To be able to work with propositional logic algorithms, we need to transform eve
 The **PL-resolution** algorithm works by contradiction: to show that $KB \models \alpha$ it proves that $KB \land \neg\alpha$ is unsatisfiable.<br>
 Initially, $KB \land \neg\alpha$ is converted to CNF, and all the clauses of this conjunction are put in a set; the *Resolution* inference rule is then applied to all elements it contains, repeatedly, forming new clauses that are added to the set. In the end, if no more clauses can be added KB does not entail $\alpha$, otherwise if two clauses resolve to and empty clause the theorem is proven. PL-resolution is complete, as it always find the proof if it exists.<br>
 Faster algorithms can be found if inference is made only in Horn clauses (disjunctions that have at most one positive literal) like the forward-chaining and backward-chaining algorithms.<br>
-In **forward-chaining**, a single proposition symbol $q$ (the query) is proven from a KB set of definite clauses (conjunctions with a single positive literal).<br>
-Starting from positive literals in the KB, if all the premises of an implication are true, the conclusion is added to the set. For example, if $A$ and $B$ are true, and the KB contains $$A \land B \implies C$$ then $C$ is added to the set. The process continues until $q$ is added (and so proved), or until no further inferences can be made. Forward-chaining is sound and complete.<br>
+In **forward-chaining**, a single proposition symbol $q$ (the query) is proven from a KB set of definite clauses (disjunctions with a single positive literal).<br>
+Starting from positive literals in the KB, if all the premises of an implication are true, the conclusion is added to the set. For example, if $A$ and $B$ are true, and the KB contains $A \land B \implies C$, then $C$ is added to the set. The process continues until $q$ is added (and so proved), or until no further inferences can be made. Forward-chaining is sound and complete.<br>
 In **backward-chaining**, the algorithm works in the opposite way of forward-chaining. It looks for the implications in the KB, starting from the conclusion $q$. If one of these implication is found, then $q$ is true.<br>
 Both chaining algorithms are linear in time complexity.
+## SAT problem: DPLL algorithm
+The **DPLL** algorithm (the name comes from the initials of the authors) takes as input a sentence in conjunctive normal form (CNF) as a set of clauses. Essentially, it is a recursive [depth-first](../II%20-%20Problem%20Solving/3%20-%20Solving%20Problems%20by%20Searching.md#depth-first-search) enumeration of possible models.<br>
+The efficiency of the algorithm stands in three main improvements.
+1. Early termination: a clause is true if any of its literal is true; that means that if a literal is detected as true, the followings literals in the clause can be ignored. The same thing can be applied to conjunction of clauses: if a clause is false, the full sentence is false.
+2. Pure symbol heuristic: a symbol is pure if it always appears with the same sign (natural or negated). If a symbol is pure, all models must have its literal set as true, so that all clauses it is in are necessarily true, so they can be pruned.
+3. Unit clause heuristic: unit clauses are clauses where all but one literal have been already assigned as false. These clauses can be pruned to contain only the last unknown literal, such that useless branches are pruned on the next iteration (unit propagation).
+
+There can be some other little improvements we can do.
+- If all components do not share variables, we can work on each element separately.
+- Instead of trying always the true value before false, we can use a degree heuristic to choose first the option that appears more frequently on remaining clauses.
+- Conflict cause learning with intelligent backtracking can be preferred over chronological backtracking, by keeping a small set of conflicts.
+- Random restarts, over different variables with different values, can prune branches that interfere with the search's progress.
+- Clever indexing is useful while indexing structures dynamically.
+
+Finally, we mention the **walkSAT** algorithm.<br>
+One every iteration, the algorithm chooses an unsatisfied clause in which it picks a symbol to flip (from true to false, or the other way around). The pick is done randomly between two ways: min-conflict, which choose the variable that minimize the number of unsatisfied clause in the new state, or random walk, that just picks a symbol randomly.<br>
+This algorithm is very effective, but if the sentence is unsatisfiable, so no proof exists, the search never terminates.

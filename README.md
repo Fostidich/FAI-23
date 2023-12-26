@@ -45,9 +45,9 @@
 | :white_check_mark: | 30/10 | [II-4](./II%20-%20Problem%20Solving/4%20-%20Search%20in%20Complex%20Environment.md), [II-6](./II%20-%20Problem%20Solving/6%20-%20Constraint%20Satisfaction%20Problems.md) | 4.1.1, 6.2/6.4 |
 | :white_check_mark: | 10/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md), [III-8](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/8%20-%20First%20Order%20Logic.md) | 7.1/7.3-7.4, 8 |
 | :white_check_mark: | 14/11 |  |  |
-| :white_large_square: | 17/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md) | 7.6 |
-| :white_large_square: | 20/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md) | 7.5 |
-| :white_large_square: | 24/11 |  |  |
+| :white_check_mark: | 17/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md) | 7.6 |
+| :white_check_mark: | 20/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md) | 7.5 |
+| :white_check_mark: | 24/11 |  |  |
 | :white_large_square: | 27/11 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.1-11.2 |
 | :white_large_square: | 01/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.2 |
 | :white_large_square: | 04/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.5 |

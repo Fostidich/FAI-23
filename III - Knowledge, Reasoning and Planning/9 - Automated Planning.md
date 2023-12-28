@@ -98,3 +98,12 @@ LookAt&(Table),LookAt(Chair), \\
 \end{align}$$
 
 ## Online planning
+An online planning agent differs from other planning agents by monitoring the environment during plan execution, before taking an action. There can be many approaches for the monitoring.
+- Action monitoring: preconditions are verified to still hold.
+- Plan monitoring: the remaining plan is verified to still be successful.
+- Goal monitoring: the agent checks if there is a better set of goals to be achieved.
+
+At the end, the agent also checks that the plan has succeeded. It also checks for serendipity, that is, the accidental success.<br>
+In this kind of planning, we also introduce replanning. Sometimes, when going down a path that may not promise an efficient success, the algorithm should prefer to replan the problem to look for better branches. This is also key if dead ends can be found.<br>
+Furthermore, the process of plan-execute-replan can be more efficient and effective than an explicit loop in the plan.<br>
+In the end, prediction failure is an opportunity for learning; the agents should modify its model of the world to accord with its percepts. From then on, the replanner will be able to choose the repair sequence that gets to the root problem, instead of relying on luck.

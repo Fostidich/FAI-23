@@ -48,9 +48,9 @@
 | :white_check_mark: | 17/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md) | 7.6 |
 | :white_check_mark: | 20/11 | [III-7](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/7%20-%20Logical%20Agents.md) | 7.5 |
 | :white_check_mark: | 24/11 |  |  |
-| :white_large_square: | 27/11 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.1-11.2 |
-| :white_large_square: | 01/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.2 |
-| :white_large_square: | 04/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.5 |
+| :white_check_mark: | 27/11 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.1-11.2 |
+| :white_check_mark: | 01/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.2 |
+| :white_check_mark: | 04/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.5 |
 | :white_large_square: | 11/12 | [IV-10](./IV%20-%20Uncertain%20Knowledge%20and%20Reasoning/10%20-%20Quantifying%20Uncertainty.md), [IV-11](./IV%20-%20Uncertain%20Knowledge%20and%20Reasoning/11%20-%20Probabilistic%20Reasoning.md) | 12.1-12.5, 13.1-13.4 |
 | :white_large_square: | 15/12 |  |  |
 | :white_large_square: | 18/12 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [VI-14](./VI%20-%20Conclusions/14%20-%20Philosophy,%20Ethics%20and%20Safety%20of%20AI.md), [VI-15](./VI%20-%20Conclusions/15%20-%20The%20Future%20of%20AI.md) | 1, 27, 28 |

@@ -35,3 +35,6 @@ Acti&on(MoveToTable(b,x), \\
 & {\small EFFECT:} \space On(b,Table) \land \neg On(b,x))
 \end{align}$$
 
+The state-space can be searched with algorithms that may look forward for the goal, given the initial state, or backward by looking for the initial state from the goal.<br>
+We need to mention a third alternative, that is to translate the problem description into a set of logical sentences, to which apply a logical inference algorithm to find a solution. SAT-based planner such as SATP<font size="2">LAN</font> operate by translating a PDDL problem description into propositional form.
+## Forward planning search

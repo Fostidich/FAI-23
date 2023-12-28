@@ -12,7 +12,9 @@ Ac&tion(Fly(p,\mathit{from},to), \newline
 \end{align}$$
 
 The schema consists of the action name, a list of used variables, a precondition and an effect.<br>
-A ground action $a$ is applicable in a state $s$ if $s$ entails the precondition of $a$. The result of taking action $a$ in $s$ is defined as state $s'$, defined as $$ s' = {\small RESULT}(s, a) = (s - {\small DEL}(a)) \cup {\small ADD}(a)$$ where 
+A ground action $a$ is applicable in a state $s$ if $s$ entails the precondition of $a$. The result of taking action $a$ in $s$ is defined as state $s'$, defined as 
+$$s' = {\small RESULT}(s, a) = (s - {\small DEL}(a)) \cup {\small ADD}(a)$$
+where 
 - $DEL(a)$ is the delete list of $a$, composed of the fluents that appear as negative literals in action's effect,
 - $ADD(a)$ is the add list of $a$, composed of the fluents that appear as positive literals in the action's effect.
 

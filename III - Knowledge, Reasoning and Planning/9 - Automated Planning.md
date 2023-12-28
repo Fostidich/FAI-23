@@ -4,9 +4,5 @@ Classical planning is defined as the task of finding a sequence of actions to ac
 We do use a factored representation that comes from a family of languages called PDDL (planning domain definition language).<br>
 In PDDL, a state is a conjunction of ground atomic fluents, where ground means "without variables", atomic means "with a single predicate" and fluent means "the aspect of the world changes".<br>
 The available ground actions are described in an action schema.
-$$\begin{align} 
-&\mathit{Action(Fly(p,from,to),} \\
-&\mathit{\hspace{5mm} {\small PRECOND:}\space At(p,from)\land Plane(p)\land Airport(from)\land Airport(to)} \\
-&\mathit{\hspace{5mm} {\small EFFECT:}\space At(p,from)\land At(p,to))}
-\end{align}$$
+$$\begin{align} &\mathit{Action(Fly(p,from,to),} \\ &\mathit{\hspace{5mm} {\small PRECOND:}\space At(p,from)\land Plane(p)\land Airport(from)\land Airport(to)} \\ &\mathit{\hspace{5mm} {\small EFFECT:}\space At(p,from)\land At(p,to))} \end{align}$$
 The schema consists of the action name, a list of used variables, a precondition and an effect.

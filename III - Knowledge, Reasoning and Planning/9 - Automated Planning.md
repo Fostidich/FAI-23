@@ -6,15 +6,9 @@ In PDDL, a state is a conjunction of ground atomic fluents, where ground means "
 The available ground actions are described in an action schema.
 
 $$\begin{align} 
-Action(Fly(p,from,t&o), \newline
-{\small PRECOND:}\space A&t(p,from)\land Plane(p) \newline
-{\small EFFECT:}\space A&t(p,from)\land At(p,to))
+Ac&tion(Fly(p,\mathit{from},to), \newline
+&{\small PRECOND:}\space At(p,\mathit{from})\land Plane(p) \land Airport(\mathit{from}) \land Airport(to) \newline
+&{\small EFFECT:}\space \neg At(p,\mathit{from})\land At(p,to))
 \end{align}$$
 
 The schema consists of the action name, a list of used variables, a precondition and an effect.
-
-$$\begin{align}
-&allora \newline
-allo&ra \\
-\end{align}
-$$

@@ -5,8 +5,14 @@ We do use a factored representation that comes from a family of languages called
 In PDDL, a state is a conjunction of ground atomic fluents, where ground means "without variables", atomic means "with a single predicate" and fluent means "the aspect of the world changes".<br>
 The available ground actions are described in an action schema.
 $$\begin{align} 
-Ac&tion(Fly(p,from,to), \\\
-&{\small PRECOND:}\space At(p,from)\land Plane(p)\land Airport(from)\land Airport(to) \\\
+Ac&tion(Fly(p,from,to), \\
+&{\small PRECOND:}\space At(p,from)\land Plane(p)\land Airport(from)\land Airport(to) \\
 &{\small EFFECT:}\space At(p,from)\land At(p,to))
 \end{align}$$
 The schema consists of the action name, a list of used variables, a precondition and an effect.
+
+$$\begin{align}
+&allora \\
+allo&ra \\
+\end{align}
+$$

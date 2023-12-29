@@ -53,7 +53,7 @@ $$\begin{align}
 This defines the reached state $s'$, in which we find the positive literals of the state description with $POS(s')$ and negatives with $NEG(s')$.<br>
 Backward search uses states with variables rather than ground states.
 # Nondeterministic planning
-When we extend planning to partially observable, nondeterministic and unknown environment we have to represent belief states in which the agent might be in.<br>
+When we extend planning to a partially observable, nondeterministic and unknown environment, we have to represent belief states in which the agent might be in. A belief state is a representation of the set of all possible world states that it might be in.<br>
 We use sensorless (conformant) planning for environment with no observations, contingency planning for partially observable and nondeterministic environments and online planning (or replanning) for unknown environment.<br>
 Preconditions and effects now may contain variables that are not part of action's variable list; that was not allowed in fully observable cases.<br>
 Furthermore, the PDDL need to be augmented with the percept schema.

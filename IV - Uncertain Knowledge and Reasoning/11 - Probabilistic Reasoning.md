@@ -2,7 +2,7 @@ Conditional independence relationships can make a good representation of a proba
 # Knowledge in uncertain domains
 Bayesian network are data structures used to represent dependencies among variables. It is a directed acyclic graph where each node corresponds to a random variable, for which there's the associated probability information $P(X_i|Parents(X_i))$. Therefore, for each variable the probability information is in the form of a conditional distribution given its parents.<br>
 The information is stored in a conditional probability table (CPT), one for each variable, in which each row contains the conditional probability of the variable given a combination for truth value of parents.<br>
-The Bayes network graph stores the conditional probabilities (that come into knowledge once they've been sampled), but to be able to query an unknown probability we have to define the Bayes semantics, that is the product of all variables.
+The Bayes network graph stores the conditional probabilities (that come into knowledge once they've been sampled), but to be able to query an unknown probability we have to define the Bayes semantics, that is the product of every probability combination contained in the graph.
 $$P(x_1,...,x_n)=P(X_1=x_1,...,X_n=x_n)=\prod_{i=1}^{n}P(x_i|parents(X_i))$$
 Making a query consists in calculating a conditional probability with the Bayes network's semantics, in which we put the dependent random variable as true (or false) and all the dependencies as true. All other variables are not imposed, so they will be seen in all their combinations.<br>
 For instance, if our semantics is

@@ -22,9 +22,6 @@
 5. Machine Learning
 	- [12 - Learning from Examples](./V%20-%20Machine%20Learning/12%20-%20Learning%20from%20Examples.md)
 	- [13 - Reinforcement Learning](./V%20-%20Machine%20Learning/13%20-%20Reinforcement%20Learning.md)
-6. Conclusions
-	- [14 - Philosophy, Ethics and Safety of AI](./VI%20-%20Conclusions/14%20-%20Philosophy,%20Ethics%20and%20Safety%20of%20AI.md)
-	- [15 - The Future of AI](./VI%20-%20Conclusions/15%20-%20The%20Future%20of%20AI.md)
 
 ## Progress
 | Done | Date | Link | Chapter |
@@ -51,7 +48,7 @@
 | :white_check_mark: | 27/11 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.1-11.2 |
 | :white_check_mark: | 01/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.2 |
 | :white_check_mark: | 04/12 | [III-9](./III%20-%20Knowledge,%20Reasoning%20and%20Planning/9%20-%20Automated%20Planning.md) | 11.5 |
-| :white_large_square: | 11/12 | [IV-10](./IV%20-%20Uncertain%20Knowledge%20and%20Reasoning/10%20-%20Quantifying%20Uncertainty.md), [IV-11](./IV%20-%20Uncertain%20Knowledge%20and%20Reasoning/11%20-%20Probabilistic%20Reasoning.md) | 12.1-12.5, 13.1-13.4 |
-| :white_large_square: | 15/12 |  |  |
-| :white_large_square: | 18/12 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [VI-14](./VI%20-%20Conclusions/14%20-%20Philosophy,%20Ethics%20and%20Safety%20of%20AI.md), [VI-15](./VI%20-%20Conclusions/15%20-%20The%20Future%20of%20AI.md) | 1, 27, 28 |
-| :white_large_square: | 22/12 |  |  |
+| :white_check_mark: | 11/12 | [IV-10](./IV%20-%20Uncertain%20Knowledge%20and%20Reasoning/10%20-%20Quantifying%20Uncertainty.md), [IV-11](./IV%20-%20Uncertain%20Knowledge%20and%20Reasoning/11%20-%20Probabilistic%20Reasoning.md) | 12.1-12.5, 13.1-13.4 |
+| :white_check_mark: | 15/12 |  |  |
+| :white_check_mark: | 18/12 | [I-1](./I%20-%20Artificial%20Intelligence/1%20-%20Introduction.md), [VI-14](./VI%20-%20Conclusions/14%20-%20Philosophy,%20Ethics%20and%20Safety%20of%20AI.md), [VI-15](./VI%20-%20Conclusions/15%20-%20The%20Future%20of%20AI.md) | 1, 27, 28 |
+| :white_check_mark: | 22/12 |  |  |
